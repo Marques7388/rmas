@@ -8,18 +8,18 @@ Library    SeleniumLibrary
 
 ${BROWSER}    chrome
 ${URL}    http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos
-${INPUT_BUSCA}  //input[contains(@class,'form-control')]
+${INPUT_BUSCA}    //input[@placeholder='Informações do acordo']
 ${CLICK_BUTON}    //button[contains(.,'Buscar')]
-${STATUS_1}    (//span[@class='status-text d-block text-truncate'][contains(.,'Pedido recebido pela CASC')])[1]
-${STATUS_2}    //span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]
-${STATUS_3}    //span[@class='status-text d-block text-truncate'][contains(.,'Pedido inadmitido na CASC')]
-${STATUS_4}    //span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido preliminarmente na CASC')]
-${STATUS_5}    //span[@class='status-text d-block text-truncate'][contains(.,'Inadmitido por falta de interesse (OU)')]
-${STATUS_6}    //span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido na CASC')]
-${STATUS_7}    //span[@class='status-text d-block text-truncate'][contains(.,'Em fase de sessões de mediação')]
-${STATUS_8}    //span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído por ausência de acordo')]
-${STATUS_9}    //span[@class='status-text d-block text-truncate'][contains(.,'Acordo firmado')]
-${STATUS_10}   //span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído com êxito')]
+${STATUS_1}      //div[text()='Pedido recebido pela CASC']
+${STATUS_2}     //div[text()='Em análise de admissibilidade']
+${STATUS_3}     //div[text()='Pedido inadmitido na CASC']
+${STATUS_4}     //div[text()='Pedido admitido preliminarmente na CASC']
+${STATUS_5}    //div[text()='Inadmitido por falta de interesse']
+${STATUS_6}    //div[text()='Pedido admitido na CASC']
+${STATUS_7}    //div[text()='Em fase de sessões de mediação']
+${STATUS_8}    //div[text()='Processo concluído por ausência de acordo']
+${STATUS_9}    //div[text()='Etapa de assinatura e homologação']
+${STATUS_10}   //div[text()='Acordo concluído com êxito']
 
 *** Keywords ***
 
@@ -42,7 +42,8 @@ Então ele visualiza o título da página
 
 E preenche o campo "Buscar por" com um número de protocolo
     #Clicar e preencher o campo de busca
-    Click Element    ${INPUT_BUSCA}  
+    Wait Until Element Is Visible    //input[contains(@class,'form-control')]
+    Click Element    ${INPUT_BUSCA} 
     Input Text   ${INPUT_BUSCA}  0001
 
 E clica no botão Buscar
@@ -57,112 +58,130 @@ Então o sistema filtra os resultados pelo número informado
 #Seleção na combo
 E seleciona a opção "Pedido recebido pela CASC" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='1'][contains(.,'Pedido recebido pela CASC')]
-
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_1}
 E seleciona a opção "Em análise de admissibilidade" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='2'][contains(.,'Em análise de admissibilidade')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_2}
 
 E seleciona a opção "Pedido inadmitido na CASC" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='3'][contains(.,'Pedido inadmitido na CASC')]
-
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_3}
 E seleciona a opção "Pedido admitido preliminarmente na CASC" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='4'][contains(.,'Pedido admitido preliminarmente na CASC')]
-
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_4}
 E seleciona a opção "Inadmitido por falta de interesse" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='5'][contains(.,'Inadmitido por falta de interesse')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_5}
 
 E seleciona a opção "Pedido admitido na CASC" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='6'][contains(.,'Pedido admitido na CASC')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_6}
 
 E seleciona a opção "Em fase de sessões de mediação" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='7'][contains(.,'Em fase de sessões de mediação')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_7}
 
 E seleciona a opção "Processo concluído por ausência de acordo" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='8'][contains(.,'Processo concluído por ausência de acordo')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_8}
 
 E seleciona a opção "Etapa de assinatura e homologação" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='9'][contains(.,'Acordo firmado')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_9}
 
 E seleciona a opção "Acordo concluído com êxito" no campo "Status"
     #Selecionar um registro na combo de status
-    Click Element    locator=//option[@value='10'][contains(.,'Processo concluído com êxito')]
+    Wait Until Element Is Visible    //input[@role='combobox']
+    Click Element    //input[@role='combobox']
+    Click Element    ${STATUS_10}
 
 #Atualização na grid
     
 Então o sistema atualiza a lista com o registro de status 1
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains     locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido recebido pela CASC')]    text=Pedido recebido pela CASC
-    Page Should Contain Element     ${STATUS_1}
+    Page Should Contain    text=Pedido recebido pela CASC
 
 
 
 Então o sistema atualiza a lista com o registro de status 2
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains     locator=//span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]    text=Em análise de admissibilidade
-    Page Should Contain Element     ${STATUS_2}
+    Page Should Contain    text=Em análise de admissibilidade
 
 
 
 Então o sistema atualiza a lista com o registro de status 3
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido inadmitido na CASC')]    text=Pedido inadmitido na CASC
-    Page Should Contain Element    ${STATUS_3}
+    Page Should Contain    text=Pedido inadmitido na CASC
 
 
 
 Então o sistema atualiza a lista com o registro de status 4
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido preliminarmente na CASC')]    text=Pedido admitido preliminarmente na CASC
-    Page Should Contain Element    ${STATUS_4}
+    Page Should Contain    text=Pedido admitido preliminarmente na CASC
 
 
 Então o sistema atualiza a lista com o registro de status 5
     #Aguardar o elemento estar visível e validar o mesmo após a busca
-    Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Inadmitido por falta de interesse (OU)')]    text=Inadmitido por falta de interesse (OU)
-    Page Should Contain Element    ${STATUS_5}
+    Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Inadmitido por falta de interesse')]    text=Inadmitido por falta de interesse
+    Page Should Contain    text=Inadmitido por falta de interesse
 
 
 Então o sistema atualiza a lista com o registro de status 6
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido na CASC')]    text=Pedido admitido na CASC
-    Page Should Contain Element    ${STATUS_6}
+    Page Should Contain    text=Pedido admitido na CASC
 
 
 Então o sistema atualiza a lista com o registro de status 7
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Em fase de sessões de mediação')]    text=Em fase de sessões de mediação
-    Page Should Contain Element    ${STATUS_7}
+    Page Should Contain    text=Em fase de sessões de mediação
 
 
 Então o sistema atualiza a lista com o registro de status 8
     #Aguardar o elemento estar visível e validar o mesmo após a busca
     Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído por ausência de acordo')]    text=Processo concluído por ausência de acordo
-    Page Should Contain Element    ${STATUS_8}
+    Page Should Contain    text=Processo concluído por ausência de acordo
 
 
 Então o sistema atualiza a lista com o registro de status 9
     #Aguardar o elemento estar visível e validar o mesmo após a busca
-    Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Acordo firmado')]    text=Acordo firmado
-    Page Should Contain Element    ${STATUS_9}
+    Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Etapa de assinatura e homologação')]    text=Etapa de assinatura e homologação
+    Page Should Contain    text=Etapa de assinatura e homologação
 
 
 Então o sistema atualiza a lista com o registro de status 10
     #Aguardar o elemento estar visível e validar o mesmo após a busca
-    Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído com êxito')]    text=Processo concluído com êxito
-    Page Should Contain Element    ${STATUS_10}
+    Wait Until Element Contains    locator=//span[@class='status-text d-block text-truncate'][contains(.,'Acordo concluído com êxito')]    text=Acordo concluído com êxito
+    Page Should Contain    text=Acordo concluído com êxito
 
 #Outras buscas
 
 E preenche o campo "Buscar por" com o nome de uma parte
     #Clicar e preencher o campo de busca
+    Wait Until Element Is Visible    //input[contains(@class,'form-control')]
     Click Element    ${INPUT_BUSCA}  
     Input Text   ${INPUT_BUSCA}    João
 
@@ -173,7 +192,8 @@ Então o sistema filtra os resultados pelo nome da parte informada
 
 E preenche o campo "Buscar por" com o um registro inexistente
      #Clicar e preencher o campo de busca
-    Click Element    ${INPUT_BUSCA}  
+    Wait Until Element Is Visible    //input[contains(@class,'form-control')]
+    Click Element    ${INPUT_BUSCA}   
     Input Text   ${INPUT_BUSCA}    asdf
 
 Então o sistema exibe mensagem sobre os critérios da busca

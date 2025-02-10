@@ -1,1041 +1,431 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-09-27T18:20:25.570432" rpa="false" schemaversion="5">
-<suite id="s1" name="Test" source="C:\Robot\web\test">
-<suite id="s1-s1" name="Listar Acordos Testes" source="C:\Robot\web\test\listar_acordos_testes.robot">
-<test id="s1-s1-t1" name="Caso de teste 01 - Validar tela inicial da lista de acordos" line="11">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2025-02-10T14:01:36.494518" rpa="false" schemaversion="5">
+<suite id="s1" name="Propor Novo Acordo Testes" source="c:\Robot\web\test\propor_novo_acordo_testes.robot">
+<test id="s1-t1" name="Caso de teste 02 - Criar novo acordo" line="17">
+<kw name="Abrir o navegador" owner="propor_novo_acordo_page" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:25.773920" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-02-10T14:01:36.668479" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
 <arg>browser=${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:25.773920" elapsed="1.884318"/>
+<status status="PASS" start="2025-02-10T14:01:36.668479" elapsed="1.536950"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:20:27.658238" elapsed="0.045642"/>
+<status status="PASS" start="2025-02-10T14:01:38.206429" elapsed="0.039604"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:20:25.773920" elapsed="1.929960"/>
+<status status="PASS" start="2025-02-10T14:01:36.667478" elapsed="1.578555"/>
 </kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
+<kw name="Dado que estou logado no sistema de acordos" owner="propor_novo_acordo_page">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:27.705880" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
+<msg time="2025-02-10T14:01:38.248541" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:27.704876" elapsed="0.516810"/>
+<status status="PASS" start="2025-02-10T14:01:38.247042" elapsed="1.139269"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:20:27.704876" elapsed="0.516810"/>
+<status status="PASS" start="2025-02-10T14:01:38.247042" elapsed="1.139269"/>
 </kw>
-<kw name="Então ele visualiza o título da página" owner="listar_acordos">
+<kw name="E visualizo o título da página" owner="propor_novo_acordo_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//h4[contains(.,'Câmara Administrativa de Solução de Controvérsias - CASC')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-10T14:01:39.388314" elapsed="0.238473"/>
+</kw>
 <kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:28.237320" level="INFO">Current page contains text 'Câmara Administrativa de Solução de Controvérsias - CASC'.</msg>
+<msg time="2025-02-10T14:01:39.642786" level="INFO">Current page contains text 'Câmara Administrativa de Solução de Controvérsias - CASC'.</msg>
 <arg>text=Câmara Administrativa de Solução de Controvérsias - CASC</arg>
 <doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:20:28.221686" elapsed="0.015634"/>
+<status status="PASS" start="2025-02-10T14:01:39.627785" elapsed="0.015001"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:20:28.221686" elapsed="0.015634"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:28.443790" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-10T14:01:39.744552" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-370.png"&gt;&lt;img src="selenium-screenshot-370.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:20:28.237320" elapsed="0.206470"/>
+<status status="PASS" start="2025-02-10T14:01:39.642786" elapsed="0.101766"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:20:28.443790" elapsed="2.224861"/>
+<status status="PASS" start="2025-02-10T14:01:39.387314" elapsed="0.357238"/>
 </kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:20:28.237320" elapsed="2.431331"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:25.773920" elapsed="4.894731"/>
-</test>
-<test id="s1-s1-t2" name="Caso de teste 02 - Buscar por número do protocolo" line="15">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:30.671665" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:30.671665" elapsed="1.672902"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:20:32.344567" elapsed="0.031909"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:30.671665" elapsed="1.704811"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:32.376476" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:32.376476" elapsed="0.146129"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:32.376476" elapsed="0.146129"/>
-</kw>
-<kw name="E preenche o campo &quot;Buscar por&quot; com um número de protocolo" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:32.545017" level="INFO">Clicking element '//input[contains(@class,'form-control')]'.</msg>
-<arg>${INPUT_BUSCA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:32.545017" elapsed="0.653795"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:33.198812" level="INFO">Typing text '0001' into text field '//input[contains(@class,'form-control')]'.</msg>
-<arg>${INPUT_BUSCA}</arg>
-<arg>0001</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.198812" elapsed="0.077013"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:32.544017" elapsed="0.731808"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:33.276102" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.276102" elapsed="0.069604"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:33.276102" elapsed="0.070619"/>
-</kw>
-<kw name="Então o sistema filtra os resultados pelo número informado" owner="listar_acordos">
+<kw name="E clico no botão Propor Novo Acordo" owner="propor_novo_acordo_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>//a[contains(.,'0001')]</arg>
+<arg>//span[contains(.,'Propor Novo Acordo')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.348276" elapsed="0.230754"/>
+<status status="PASS" start="2025-02-10T14:01:39.745555" elapsed="0.016996"/>
 </kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:33.605676" level="INFO">Element '//a[contains(.,'0001')]' is displayed.</msg>
-<arg>locator=//a[contains(.,'0001')]</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.579030" elapsed="0.026646"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:33.347704" elapsed="0.257972"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:33.723023" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-49.png"&gt;&lt;img src="selenium-screenshot-49.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.606675" elapsed="0.116348"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.723023" elapsed="2.211663"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:20:33.606675" elapsed="2.328011"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:30.671665" elapsed="5.265460"/>
-</test>
-<test id="s1-s1-t3" name="Caso de teste 03 - Buscar por status &quot;Pedido recebido pela CASC&quot;" line="21">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:35.938623" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:35.938623" elapsed="1.618875"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:20:37.557498" elapsed="0.086223"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:35.938623" elapsed="1.706097"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:37.649150" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:37.648139" elapsed="0.592415"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:37.647110" elapsed="0.593444"/>
-</kw>
-<kw name="E seleciona a opção &quot;Pedido recebido pela CASC&quot; no campo &quot;Status&quot;" owner="listar_acordos">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:38.257865" level="INFO">Clicking element '//option[@value='1'][contains(.,'Pedido recebido pela CASC')]'.</msg>
-<arg>locator=//option[@value='1'][contains(.,'Pedido recebido pela CASC')]</arg>
+<msg time="2025-02-10T14:01:39.763552" level="INFO">Clicking element '//span[contains(.,'Propor Novo Acordo')]'.</msg>
+<arg>${CLICK_BUTON_ACORDO}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.257865" elapsed="0.073783"/>
+<status status="PASS" start="2025-02-10T14:01:39.763552" elapsed="0.314204"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:20:38.256663" elapsed="0.074985"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:38.331648" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.331648" elapsed="0.083721"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:38.331648" elapsed="0.083721"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 1" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido recebido pela CASC')]</arg>
-<arg>text=Pedido recebido pela CASC</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.415369" elapsed="0.276630"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:38.708866" level="INFO">Current page contains element '(//span[@class='status-text d-block text-truncate'][contains(.,'Pedido recebido pela CASC')])[1]'.</msg>
-<arg>${STATUS_1}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.691999" elapsed="0.016867"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:38.415369" elapsed="0.293497"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:38.843924" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-50.png"&gt;&lt;img src="selenium-screenshot-50.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-10T14:01:40.220850" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-371.png"&gt;&lt;img src="selenium-screenshot-371.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.708866" elapsed="0.135058"/>
+<status status="PASS" start="2025-02-10T14:01:40.077756" elapsed="0.143094"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.843924" elapsed="2.197073"/>
+<status status="PASS" start="2025-02-10T14:01:39.745555" elapsed="0.476305"/>
 </kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:20:38.708866" elapsed="2.332131"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:35.937125" elapsed="5.103872"/>
-</test>
-<test id="s1-s1-t4" name="Caso de teste 04 - Buscar por status &quot;Em análise de admissibilidade&quot;" line="27">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:41.046294" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:41.045341" elapsed="1.589748"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:20:42.635089" elapsed="0.047183"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:41.045341" elapsed="1.636931"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:42.685306" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:42.685306" elapsed="0.607543"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:42.684282" elapsed="0.608567"/>
-</kw>
-<kw name="E seleciona a opção &quot;Em análise de admissibilidade&quot; no campo &quot;Status&quot;" owner="listar_acordos">
+<kw name="E preencho o campo CNJ" owner="propor_novo_acordo_page">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:43.292849" level="INFO">Clicking element '//option[@value='2'][contains(.,'Em análise de admissibilidade')]'.</msg>
-<arg>locator=//option[@value='2'][contains(.,'Em análise de admissibilidade')]</arg>
+<msg time="2025-02-10T14:01:40.223908" level="INFO">Clicking element '//input[@aria-label='Digite o Número do CNJ']'.</msg>
+<arg>//input[@aria-label='Digite o Número do CNJ']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:43.292849" elapsed="0.180296"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:43.292849" elapsed="0.181342"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:43.478902" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:43.478902" elapsed="0.116627"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:43.478902" elapsed="0.117625"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 2" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:48.823114" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-51.png"&gt;&lt;img src="selenium-screenshot-51.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-09-27T18:20:48.823114" level="FAIL">Element with locator '//span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]' not found.</msg>
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]</arg>
-<arg>text=Em análise de admissibilidade</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="FAIL" start="2024-09-27T18:20:43.596527" elapsed="5.242104">Element with locator '//span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]' not found.</status>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<arg>${STATUS_2}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="NOT RUN" start="2024-09-27T18:20:48.838631" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-09-27T18:20:43.596527" elapsed="5.242104">Element with locator '//span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]' not found.</status>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:48.946751" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-52.png"&gt;&lt;img src="selenium-screenshot-52.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:20:48.838631" elapsed="0.108120"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:20:48.946751" elapsed="2.209346"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:20:48.838631" elapsed="2.317466"/>
-</kw>
-<status status="FAIL" start="2024-09-27T18:20:41.044294" elapsed="10.111803">Element with locator '//span[@class='status-text d-block text-truncate'][contains(.,'Em análise de admissibilidade')]' not found.</status>
-</test>
-<test id="s1-s1-t5" name="Caso de teste 05 - Buscar por status &quot;Pedido inadmitido na CASC&quot;" line="33">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:51.156097" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:51.156097" elapsed="1.520586"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:20:52.676683" elapsed="0.070303"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:51.156097" elapsed="1.590889"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:52.755543" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:52.753511" elapsed="0.631446"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:52.750987" elapsed="0.634970"/>
-</kw>
-<kw name="E seleciona a opção &quot;Pedido inadmitido na CASC&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:53.386956" level="INFO">Clicking element '//option[@value='3'][contains(.,'Pedido inadmitido na CASC')]'.</msg>
-<arg>locator=//option[@value='3'][contains(.,'Pedido inadmitido na CASC')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:53.385957" elapsed="0.131881"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:53.385957" elapsed="0.131881"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:53.518840" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:53.518840" elapsed="0.108150"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:53.518840" elapsed="0.108150"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 3" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido inadmitido na CASC')]</arg>
-<arg>text=Pedido inadmitido na CASC</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:20:53.628991" elapsed="0.236817"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:53.871808" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Pedido inadmitido na CASC')]'.</msg>
-<arg>${STATUS_3}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:20:53.865808" elapsed="0.006000"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:53.627998" elapsed="0.243810"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:54.079268" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-53.png"&gt;&lt;img src="selenium-screenshot-53.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:20:53.871808" elapsed="0.207460"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:20:54.079268" elapsed="2.209054"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:20:53.871808" elapsed="2.416514"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:51.156097" elapsed="5.203569"/>
-</test>
-<test id="s1-s1-t6" name="Caso de teste 06 - Buscar por status &quot;Pedido admitido preliminarmente na CASC&quot;" line="39">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:56.362662" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:56.362662" elapsed="1.554888"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:20:57.917550" elapsed="0.040118"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:56.362662" elapsed="1.595006"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:57.959184" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:20:57.959184" elapsed="0.566449"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:57.957668" elapsed="0.567965"/>
-</kw>
-<kw name="E seleciona a opção &quot;Pedido admitido preliminarmente na CASC&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:58.527632" level="INFO">Clicking element '//option[@value='4'][contains(.,'Pedido admitido preliminarmente na CASC')]'.</msg>
-<arg>locator=//option[@value='4'][contains(.,'Pedido admitido preliminarmente na CASC')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:58.527632" elapsed="0.073062"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:58.526702" elapsed="0.073992"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:58.600694" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:20:58.600694" elapsed="0.125149"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:58.600694" elapsed="0.125149"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 4" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido preliminarmente na CASC')]</arg>
-<arg>text=Pedido admitido preliminarmente na CASC</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:20:58.725843" elapsed="0.288126"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:59.027648" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido preliminarmente na CASC')]'.</msg>
-<arg>${STATUS_4}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:20:59.014994" elapsed="0.013646"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:58.725843" elapsed="0.302797"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:20:59.399197" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-54.png"&gt;&lt;img src="selenium-screenshot-54.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:20:59.029134" elapsed="0.370063"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:20:59.399197" elapsed="2.157008"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:20:59.029134" elapsed="2.527071"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:20:56.361663" elapsed="5.194542"/>
-</test>
-<test id="s1-s1-t7" name="Caso de teste 07 - Buscar por status &quot;Inadmitido por falta de interesse&quot;" line="45">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:01.556205" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:01.556205" elapsed="1.484072"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:03.040277" elapsed="0.036099"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:01.556205" elapsed="1.521611"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:03.079812" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:03.079812" elapsed="0.638117"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:03.078816" elapsed="0.639113"/>
-</kw>
-<kw name="E seleciona a opção &quot;Inadmitido por falta de interesse&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:03.719931" level="INFO">Clicking element '//option[@value='5'][contains(.,'Inadmitido por falta de interesse')]'.</msg>
-<arg>locator=//option[@value='5'][contains(.,'Inadmitido por falta de interesse')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:03.718931" elapsed="0.081624"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:03.718931" elapsed="0.081624"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:03.800555" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:03.800555" elapsed="0.075173"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:03.800555" elapsed="0.075173"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 5" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Inadmitido por falta de interesse (OU)')]</arg>
-<arg>text=Inadmitido por falta de interesse (OU)</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:03.875728" elapsed="0.269553"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:04.165932" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Inadmitido por falta de interesse (OU)')]'.</msg>
-<arg>${STATUS_5}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:04.145281" elapsed="0.020651"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:03.875728" elapsed="0.290204"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:04.314340" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-55.png"&gt;&lt;img src="selenium-screenshot-55.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:04.165932" elapsed="0.148408"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:04.314340" elapsed="2.184309"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:04.165932" elapsed="2.334376"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:01.556205" elapsed="4.944955"/>
-</test>
-<test id="s1-s1-t8" name="Caso de teste 08 - Buscar por status &quot;Pedido admitido na CASC&quot;" line="51">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:06.507041" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:06.506636" elapsed="1.571288"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:08.077924" elapsed="0.048600"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:06.501160" elapsed="1.625364"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:08.126524" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:08.126524" elapsed="0.680634"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:08.126524" elapsed="0.680634"/>
-</kw>
-<kw name="E seleciona a opção &quot;Pedido admitido na CASC&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:08.807158" level="INFO">Clicking element '//option[@value='6'][contains(.,'Pedido admitido na CASC')]'.</msg>
-<arg>locator=//option[@value='6'][contains(.,'Pedido admitido na CASC')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:08.807158" elapsed="0.071026"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:08.807158" elapsed="0.071026"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:08.878184" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:08.878184" elapsed="0.089425"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:08.878184" elapsed="0.089425"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 6" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido na CASC')]</arg>
-<arg>text=Pedido admitido na CASC</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:08.967609" elapsed="0.240620"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:09.223873" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Pedido admitido na CASC')]'.</msg>
-<arg>${STATUS_6}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:09.208229" elapsed="0.015644"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:08.967609" elapsed="0.256264"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:09.323963" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-56.png"&gt;&lt;img src="selenium-screenshot-56.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:09.223873" elapsed="0.100090"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:09.323963" elapsed="2.197336"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:09.223873" elapsed="2.297426"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:06.501160" elapsed="5.020139"/>
-</test>
-<test id="s1-s1-t9" name="Caso de teste 09 - Buscar por status &quot;Em fase de sessões de mediação&quot;" line="57">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:11.521299" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:11.521299" elapsed="1.596283"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:13.117582" elapsed="0.049087"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:11.521299" elapsed="1.646367"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:13.172673" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:13.171671" elapsed="1.003670"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:13.169660" elapsed="1.006609"/>
-</kw>
-<kw name="E seleciona a opção &quot;Em fase de sessões de mediação&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:14.177531" level="INFO">Clicking element '//option[@value='7'][contains(.,'Em fase de sessões de mediação')]'.</msg>
-<arg>locator=//option[@value='7'][contains(.,'Em fase de sessões de mediação')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.177531" elapsed="0.077093"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:14.176517" elapsed="0.078107"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:14.256282" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.256282" elapsed="0.076928"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:14.256282" elapsed="0.076928"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 7" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Em fase de sessões de mediação')]</arg>
-<arg>text=Em fase de sessões de mediação</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.333210" elapsed="0.242167"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:14.590479" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Em fase de sessões de mediação')]'.</msg>
-<arg>${STATUS_7}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.575377" elapsed="0.015102"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:14.333210" elapsed="0.257269"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:14.694674" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-57.png"&gt;&lt;img src="selenium-screenshot-57.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.590479" elapsed="0.104195"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.694674" elapsed="2.185675"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:14.590479" elapsed="2.289870"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:11.521299" elapsed="5.359985"/>
-</test>
-<test id="s1-s1-t10" name="Caso de teste 10 - Buscar por status &quot;Processo concluído por ausência de acordo&quot;" line="63">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:16.887310" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:16.887310" elapsed="1.728472"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:18.615782" elapsed="0.061207"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:16.886308" elapsed="1.790681"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:18.680003" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:18.680003" elapsed="0.576451"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:18.679002" elapsed="0.577452"/>
-</kw>
-<kw name="E seleciona a opção &quot;Processo concluído por ausência de acordo&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:19.256454" level="INFO">Clicking element '//option[@value='8'][contains(.,'Processo concluído por ausência de acordo')]'.</msg>
-<arg>locator=//option[@value='8'][contains(.,'Processo concluído por ausência de acordo')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.256454" elapsed="0.110623"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:19.256454" elapsed="0.110623"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:19.369076" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.368678" elapsed="0.094393"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:19.368016" elapsed="0.095055"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 8" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído por ausência de acordo')]</arg>
-<arg>text=Processo concluído por ausência de acordo</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.473970" elapsed="0.278812"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:19.758130" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído por ausência de acordo')]'.</msg>
-<arg>${STATUS_8}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.753783" elapsed="0.004347"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:19.472923" elapsed="0.285207"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:19.893470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-58.png"&gt;&lt;img src="selenium-screenshot-58.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.758130" elapsed="0.135340"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.893470" elapsed="2.195668"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:19.758130" elapsed="2.331008"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:16.885310" elapsed="5.206530"/>
-</test>
-<test id="s1-s1-t11" name="Caso de teste 11 - Buscar por status &quot;Acordo firmado&quot;" line="69">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:22.091840" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:22.091840" elapsed="1.636412"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:23.728252" elapsed="0.050925"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:22.091840" elapsed="1.687337"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:23.782175" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:23.782175" elapsed="0.761340"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:23.781173" elapsed="0.762342"/>
-</kw>
-<kw name="E seleciona a opção &quot;Acordo firmado&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:24.543515" level="INFO">Clicking element '//option[@value='9'][contains(.,'Acordo firmado')]'.</msg>
-<arg>locator=//option[@value='9'][contains(.,'Acordo firmado')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:24.543515" elapsed="0.032895"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:24.543515" elapsed="0.032895"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:24.591466" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:24.591466" elapsed="0.092697"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:24.590497" elapsed="0.093666"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 9" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Acordo firmado')]</arg>
-<arg>text=Acordo firmado</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:24.684163" elapsed="0.250963"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:24.943125" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Acordo firmado')]'.</msg>
-<arg>${STATUS_9}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:24.935126" elapsed="0.007999"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:24.684163" elapsed="0.258962"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:25.107182" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-59.png"&gt;&lt;img src="selenium-screenshot-59.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:24.944122" elapsed="0.163060"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:25.107182" elapsed="2.172392"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:24.944122" elapsed="2.335452"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:22.091840" elapsed="5.191134"/>
-</test>
-<test id="s1-s1-t12" name="Caso de teste 12 - Buscar por status &quot;Processo concluído com êxito&quot;" line="75">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:27.290006" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:27.290006" elapsed="1.671521"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:28.961527" elapsed="0.057981"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:27.290006" elapsed="1.730513"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:29.030183" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:29.029182" elapsed="0.793581"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:29.025188" elapsed="0.797575"/>
-</kw>
-<kw name="E seleciona a opção &quot;Processo concluído com êxito&quot; no campo &quot;Status&quot;" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:29.823585" level="INFO">Clicking element '//option[@value='10'][contains(.,'Processo concluído com êxito')]'.</msg>
-<arg>locator=//option[@value='10'][contains(.,'Processo concluído com êxito')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:29.823585" elapsed="0.053599"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:29.823585" elapsed="0.053599"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:29.877184" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:29.877184" elapsed="0.104792"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:29.877184" elapsed="0.104792"/>
-</kw>
-<kw name="Então o sistema atualiza a lista com o registro de status 10" owner="listar_acordos">
-<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
-<arg>locator=//span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído com êxito')]</arg>
-<arg>text=Processo concluído com êxito</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:29.982872" elapsed="0.248350"/>
-</kw>
-<kw name="Page Should Contain Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:30.241689" level="INFO">Current page contains element '//span[@class='status-text d-block text-truncate'][contains(.,'Processo concluído com êxito')]'.</msg>
-<arg>${STATUS_10}</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:30.231222" elapsed="0.010467"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:29.982872" elapsed="0.258817"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:30.459330" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-60.png"&gt;&lt;img src="selenium-screenshot-60.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:30.242681" elapsed="0.216649"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:30.459330" elapsed="2.177081"/>
-</kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:30.242681" elapsed="2.393730"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:27.282974" elapsed="5.356645"/>
-</test>
-<test id="s1-s1-t13" name="Caso de teste 13 - Buscar por parte" line="81">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:32.644616" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:32.644616" elapsed="1.586766"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:34.231382" elapsed="0.047127"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:32.643617" elapsed="1.634892"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:34.279509" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:34.279509" elapsed="0.719816"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:34.278509" elapsed="0.721545"/>
-</kw>
-<kw name="E preenche o campo &quot;Buscar por&quot; com o nome de uma parte" owner="listar_acordos">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:35.000881" level="INFO">Clicking element '//input[contains(@class,'form-control')]'.</msg>
-<arg>${INPUT_BUSCA}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.000881" elapsed="0.139274"/>
+<status status="PASS" start="2025-02-10T14:01:40.222853" elapsed="0.061929"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:35.142145" level="INFO">Typing text 'João' into text field '//input[contains(@class,'form-control')]'.</msg>
-<arg>${INPUT_BUSCA}</arg>
-<arg>João</arg>
+<msg time="2025-02-10T14:01:40.284782" level="INFO">Typing text '0000354-80.2024.8.19.0001' into text field '//input[@aria-label='Digite o Número do CNJ']'.</msg>
+<arg>locator=//input[@aria-label='Digite o Número do CNJ']</arg>
+<arg>text=0000354-80.2024.8.19.0001</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.141153" elapsed="0.099959"/>
+<status status="PASS" start="2025-02-10T14:01:40.284782" elapsed="0.107567"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:21:35.000054" elapsed="0.241058"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:35.243110" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.243110" elapsed="0.098856"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:35.242112" elapsed="0.099854"/>
-</kw>
-<kw name="Então o sistema filtra os resultados pelo nome da parte informada" owner="listar_acordos">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>text=João</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.341966" elapsed="0.235607"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:35.586572" level="INFO">Current page contains text 'João'.</msg>
-<arg>text=João</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.577573" elapsed="0.010002"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:35.341966" elapsed="0.245609"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:35.689881" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-61.png"&gt;&lt;img src="selenium-screenshot-61.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-10T14:01:40.494460" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-372.png"&gt;&lt;img src="selenium-screenshot-372.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.587575" elapsed="0.102306"/>
+<status status="PASS" start="2025-02-10T14:01:40.393336" elapsed="0.102124"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.689881" elapsed="2.168108"/>
+<status status="PASS" start="2025-02-10T14:01:40.222853" elapsed="0.272607"/>
 </kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:35.587575" elapsed="2.271426"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:32.643617" elapsed="5.216382"/>
-</test>
-<test id="s1-s1-t14" name="Caso de teste 14 - Buscar por registro inexistente" line="87">
-<kw name="Abrir o navegador" owner="listar_acordos" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:37.862531" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<arg>browser=${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:37.862531" elapsed="1.667127"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-27T18:21:39.529658" elapsed="0.044036"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:37.861532" elapsed="1.714163"/>
-</kw>
-<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:39.581703" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-27T18:21:39.580705" elapsed="0.554914"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:39.579706" elapsed="0.555913"/>
-</kw>
-<kw name="E preenche o campo &quot;Buscar por&quot; com o um registro inexistente" owner="listar_acordos">
+<kw name="Então o campo é validado e preenchido" owner="propor_novo_acordo_page">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:40.135619" level="INFO">Clicking element '//input[contains(@class,'form-control')]'.</msg>
-<arg>${INPUT_BUSCA}</arg>
+<msg time="2025-02-10T14:01:40.496460" level="INFO">Clicking element '//div[contains(@class,'fsCel')]'.</msg>
+<arg>//div[contains(@class,'fsCel')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.135619" elapsed="0.143649"/>
+<status status="PASS" start="2025-02-10T14:01:40.495460" elapsed="0.048794"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:40.651658" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-373.png"&gt;&lt;img src="selenium-screenshot-373.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:40.544254" elapsed="0.108299"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:40.495460" elapsed="0.157093"/>
+</kw>
+<kw name="E clico no botão Adicionar Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:40.653554" level="INFO">Clicking element '//span[contains(.,'Adicionar Requerente')]'.</msg>
+<arg>//span[contains(.,'Adicionar Requerente')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:40.653554" elapsed="0.056082"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:40.815400" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-374.png"&gt;&lt;img src="selenium-screenshot-374.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:40.709636" elapsed="0.105764"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:40.653554" elapsed="0.161846"/>
+</kw>
+<kw name="E preencho o campo CPF/CNPJ do Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:40.816400" level="INFO">Clicking element '//input[contains(@placeholder,'Digite o CPF ou CNPJ')]'.</msg>
+<arg>//input[contains(@placeholder,'Digite o CPF ou CNPJ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:40.816400" elapsed="0.065146"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:40.280270" level="INFO">Typing text 'asdf' into text field '//input[contains(@class,'form-control')]'.</msg>
-<arg>${INPUT_BUSCA}</arg>
-<arg>asdf</arg>
+<msg time="2025-02-10T14:01:40.881546" level="INFO">Typing text '054.565.490-42' into text field '//input[contains(@placeholder,'Digite o CPF ou CNPJ')]'.</msg>
+<arg>locator=//input[contains(@placeholder,'Digite o CPF ou CNPJ')]</arg>
+<arg>text=054.565.490-42</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.279268" elapsed="0.100295"/>
+<status status="PASS" start="2025-02-10T14:01:40.881546" elapsed="0.087093"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:21:40.135619" elapsed="0.243944"/>
-</kw>
-<kw name="E clica no botão Buscar" owner="listar_acordos">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:40.379563" level="INFO">Clicking button '//button[contains(.,'Buscar')]'.</msg>
-<arg>${CLICK_BUTON}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.379563" elapsed="0.075850"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:40.379563" elapsed="0.075850"/>
-</kw>
-<kw name="Então o sistema exibe mensagem sobre os critérios da busca" owner="listar_acordos">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>text=Não existem mediações cadastradas que atendam ao critério da pesquisa.</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.456416" elapsed="0.217880"/>
-</kw>
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:40.691063" level="INFO">Current page contains text 'Não existem mediações cadastradas que atendam ao critério da pesquisa.'.</msg>
-<arg>text=Não existem mediações cadastradas que atendam ao critério da pesquisa.</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.674296" elapsed="0.016767"/>
-</kw>
-<status status="PASS" start="2024-09-27T18:21:40.456416" elapsed="0.234647"/>
-</kw>
-<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-27T18:21:40.872989" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-62.png"&gt;&lt;img src="selenium-screenshot-62.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-10T14:01:41.079271" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-375.png"&gt;&lt;img src="selenium-screenshot-375.png" width="800px"&gt;&lt;/a&gt;</msg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.691063" elapsed="0.181926"/>
+<status status="PASS" start="2025-02-10T14:01:40.968639" elapsed="0.111521"/>
 </kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.872989" elapsed="2.185597"/>
+<status status="PASS" start="2025-02-10T14:01:40.816400" elapsed="0.263760"/>
 </kw>
-<arg>Capture Page Screenshot</arg>
-<arg>Close Browser</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-27T18:21:40.691063" elapsed="2.367523"/>
+<kw name="E preencho o campo Nome completo do Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.081422" level="INFO">Clicking element 'nome'.</msg>
+<arg>locator=nome</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.080160" elapsed="0.054617"/>
 </kw>
-<status status="PASS" start="2024-09-27T18:21:37.861532" elapsed="5.197939"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.137272" level="INFO">Typing text ' Representante automação 1' into text field 'nome'.</msg>
+<arg>locator=nome</arg>
+<arg>text= Representante automação 1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.136261" elapsed="0.097087"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.350511" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-376.png"&gt;&lt;img src="selenium-screenshot-376.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.233348" elapsed="0.117163"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:41.080160" elapsed="0.270351"/>
+</kw>
+<kw name="E preencho o campo Telefone do Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.352410" level="INFO">Clicking element '//input[@placeholder='Digite o Número do Telefone']'.</msg>
+<arg>//input[@placeholder='Digite o Número do Telefone']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.352410" elapsed="0.054957"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.407367" level="INFO">Typing text '2198475632' into text field '//input[@placeholder='Digite o Número do Telefone']'.</msg>
+<arg>locator=//input[@placeholder='Digite o Número do Telefone']</arg>
+<arg>text=2198475632</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.407367" elapsed="0.071864"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.618285" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-377.png"&gt;&lt;img src="selenium-screenshot-377.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.480315" elapsed="0.137970"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:41.351443" elapsed="0.266842"/>
+</kw>
+<kw name="E preencho o campo e-mail do Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.620289" level="INFO">Clicking element '(//input[@type='email'])[1]'.</msg>
+<arg>(//input[@type='email'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.620289" elapsed="0.052298"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.673584" level="INFO">Typing text 'emailreq@teste.com' into text field '(//input[@type='email'])[1]'.</msg>
+<arg>locator=(//input[@type='email'])[1]</arg>
+<arg>text=emailreq@teste.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.673584" elapsed="0.073317"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.866965" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-378.png"&gt;&lt;img src="selenium-screenshot-378.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.746901" elapsed="0.120064"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:41.619310" elapsed="0.247655"/>
+</kw>
+<kw name="E clico no botão Salvar Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:41.867964" level="INFO">Clicking element '//button[contains(.,'Salvar Requerente')]'.</msg>
+<arg>//button[contains(.,'Salvar Requerente')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.867964" elapsed="0.061670"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.015979" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-379.png"&gt;&lt;img src="selenium-screenshot-379.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:41.929634" elapsed="0.086345"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:41.867964" elapsed="0.148015"/>
+</kw>
+<kw name=" Então o sistema salva os dados do Requerente" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.017939" level="INFO">Clicking element '//div[contains(@class,'fsCel')]'.</msg>
+<arg>//div[contains(@class,'fsCel')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.016937" elapsed="0.048007"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.163236" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-380.png"&gt;&lt;img src="selenium-screenshot-380.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.064944" elapsed="0.098292"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:42.016937" elapsed="0.146299"/>
+</kw>
+<kw name="E clico no botão Adicionar Representante" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.164235" level="INFO">Clicking element '//span[contains(.,'Adicionar Representante')]'.</msg>
+<arg>//span[contains(.,'Adicionar Representante')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.164235" elapsed="0.049342"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.328908" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-381.png"&gt;&lt;img src="selenium-screenshot-381.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.213577" elapsed="0.115331"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:42.164235" elapsed="0.164673"/>
+</kw>
+<kw name=" E preencho o campo Exposição Fática do Caso" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.329914" level="INFO">Clicking element '//div[contains(@role,'textbox')]'.</msg>
+<arg>//div[contains(@role,'textbox')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.329914" elapsed="0.055788"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.387023" level="INFO">Typing text 'Preenchimento do campo Exposição Fática do Caso' into text field '//div[contains(@role,'textbox')]'.</msg>
+<arg>locator=//div[contains(@role,'textbox')]</arg>
+<arg>text=Preenchimento do campo Exposição Fática do Caso</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.385702" elapsed="0.285734"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.750852" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-382.png"&gt;&lt;img src="selenium-screenshot-382.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.671436" elapsed="0.080414"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:42.329914" elapsed="0.421936"/>
+</kw>
+<kw name="E preencho o campo CPF/CNPJ do Representante" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.752902" level="INFO">Clicking element '(//input[@placeholder='Digite o CPF ou CNPJ'])'.</msg>
+<arg>(//input[@placeholder='Digite o CPF ou CNPJ'])</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.752902" elapsed="0.063502"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.817408" level="INFO">Typing text '165.119.500-50' into text field '(//input[@placeholder='Digite o CPF ou CNPJ'])'.</msg>
+<arg>locator=(//input[@placeholder='Digite o CPF ou CNPJ'])</arg>
+<arg>text=165.119.500-50</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.817408" elapsed="0.063612"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.972863" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-383.png"&gt;&lt;img src="selenium-screenshot-383.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.881020" elapsed="0.092844"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:42.752902" elapsed="0.220962"/>
+</kw>
+<kw name="E preencho o campo Nome completo do Representante" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:42.974864" level="INFO">Clicking element 'nome'.</msg>
+<arg>nome</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:42.973864" elapsed="0.046542"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.021719" level="INFO">Typing text 'Representante automação 1' into text field 'nome'.</msg>
+<arg>locator=nome</arg>
+<arg>text=Representante automação 1</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.021719" elapsed="0.063436"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.187623" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-384.png"&gt;&lt;img src="selenium-screenshot-384.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.085155" elapsed="0.103468"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:42.973864" elapsed="0.214759"/>
+</kw>
+<kw name="E preencho o campo OAB do Representante" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.190625" level="INFO">Clicking element '//input[@placeholder='Digite o Número da OAB']'.</msg>
+<arg>//input[@placeholder='Digite o Número da OAB']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.190625" elapsed="0.072568"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.265189" level="INFO">Typing text 'RJ712223' into text field '//input[@placeholder='Digite o Número da OAB']'.</msg>
+<arg>locator=//input[@placeholder='Digite o Número da OAB']</arg>
+<arg>text=RJ712223</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.264192" elapsed="0.080320"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.462896" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-385.png"&gt;&lt;img src="selenium-screenshot-385.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.344512" elapsed="0.119266"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:43.189621" elapsed="0.274157"/>
+</kw>
+<kw name="E preencho o campo Telefone do Representante" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.464778" level="INFO">Clicking element '//input[contains(@placeholder,'Digite o Número do Telefone')]'.</msg>
+<arg>//input[contains(@placeholder,'Digite o Número do Telefone')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.464778" elapsed="0.047957"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.514740" level="INFO">Typing text '2195648796' into text field '//input[contains(@placeholder,'Digite o Número do Telefone')]'.</msg>
+<arg>locator=//input[contains(@placeholder,'Digite o Número do Telefone')]</arg>
+<arg>text=2195648796</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.513732" elapsed="0.059464"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.682108" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-386.png"&gt;&lt;img src="selenium-screenshot-386.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-10T14:01:43.574180" elapsed="0.107928"/>
+</kw>
+<status status="PASS" start="2025-02-10T14:01:43.464778" elapsed="0.217330"/>
+</kw>
+<kw name="E preencho o campo e-mail do Representante" owner="propor_novo_acordo_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-10T14:01:43.684110" level="INFO">Clicking element '(//input[@type='email'])[2]'.</msg>
+<msg time="2025-02-10T14:01:43.794244" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-387.png"&gt;&lt;img src="selenium-screenshot-387.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-10T14:01:43.794244" level="FAIL">Element with locator '(//input[@type='email'])[2]' not found.</msg>
+<arg>(//input[@type='email'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-10T14:01:43.684110" elapsed="0.112133">Element with locator '(//input[@type='email'])[2]' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>locator=(//input[@type='email'])[2]</arg>
+<arg>text=emailrepe@email.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-10T14:01:43.797244" elapsed="0.000000"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2025-02-10T14:01:43.797244" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-10T14:01:43.683108" elapsed="0.114136">Element with locator '(//input[@type='email'])[2]' not found.</status>
+</kw>
+<kw name="E clico no botão Salvar Representante" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.798245" elapsed="0.000000"/>
+</kw>
+<kw name="Então o sistema salva os dados do Representante" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.798245" elapsed="0.001000"/>
+</kw>
+<kw name="E clico no botão Adicionar Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.799245" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo Ente/Órgão Público Estadual?como não" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.799245" elapsed="0.000998"/>
+</kw>
+<kw name="E preencho o campo CPF/CNPJ do Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.800243" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo Nome completo do Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.801242" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo Telefone do Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.801242" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo e-mail do Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.801242" elapsed="0.000000"/>
+</kw>
+<kw name="E clico no botão Salvar Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.802244" elapsed="0.000000"/>
+</kw>
+<kw name="Então o sistema salva os dados do Requerido" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.802244" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo Tipo de Documento" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.803244" elapsed="0.000000"/>
+</kw>
+<kw name="E preencho o campo Título do Documento" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.803244" elapsed="0.000000"/>
+</kw>
+<kw name="E faço o upload de um arquivo" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.804243" elapsed="0.000000"/>
+</kw>
+<kw name="E clico no botão Inserir Documento" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.804243" elapsed="0.000000"/>
+</kw>
+<kw name="Então o documento é adicionado" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.804243" elapsed="0.000000"/>
+</kw>
+<kw name=" E clico no botão Salvar e Submeter à CASC" owner="propor_novo_acordo_page">
+<status status="NOT RUN" start="2025-02-10T14:01:43.805748" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-10T14:01:36.666478" elapsed="7.139270">Element with locator '(//input[@type='email'])[2]' not found.</status>
 </test>
-<doc>Essa suite testa a funcionalidade Listar acordos</doc>
-<status status="FAIL" start="2024-09-27T18:20:25.602966" elapsed="77.458546"/>
-</suite>
-<status status="FAIL" start="2024-09-27T18:20:25.582285" elapsed="77.481223"/>
+<doc>Essa suite testa a funcionalidade Propor Novo Acordo</doc>
+<status status="FAIL" start="2025-02-10T14:01:36.498517" elapsed="7.308236"/>
 </suite>
 <statistics>
 <total>
-<stat pass="13" fail="1" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="13" fail="1" skip="0" id="s1" name="Test">Test</stat>
-<stat pass="13" fail="1" skip="0" id="s1-s1" name="Listar Acordos Testes">Test.Listar Acordos Testes</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Propor Novo Acordo Testes">Propor Novo Acordo Testes</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-09-27T18:20:25.773920" level="ERROR">Error in file 'C:\Robot\web\resource\listar_acordos.resource' on line 4: Processing variable file 'C:\Robot\web\resource\locators\listar_acordos_home.yml' failed: Using YAML variable files requires PyYAML module to be installed. Typically you can install it by running `pip install pyyaml`.</msg>
 </errors>
 </robot>

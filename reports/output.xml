@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2025-02-07T16:56:37.489222" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\Robot\web\test">
+<suite id="s1-s1" name="Listar Acordos Testes" source="C:\Robot\web\test\listar_acordos_testes.robot">
+<test id="s1-s1-t1" name="Caso de teste 01 - Validar tela inicial da lista de acordos" line="12">
+<kw name="Abrir o navegador" owner="listar_acordos_page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:37.758230" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-07T16:56:37.758230" elapsed="2.183509"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-07T16:56:39.942744" elapsed="0.061577"/>
+</kw>
+<status status="PASS" start="2025-02-07T16:56:37.756698" elapsed="2.247623"/>
+</kw>
+<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:40.007335" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-02-07T16:56:40.006324" elapsed="1.394123"/>
+</kw>
+<status status="PASS" start="2025-02-07T16:56:40.005328" elapsed="1.395119"/>
+</kw>
+<kw name="Então ele visualiza o título da página" owner="listar_acordos_page">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:41.431743" level="INFO">Current page contains text 'Câmara Administrativa de Solução de Controvérsias - CASC'.</msg>
+<arg>text=Câmara Administrativa de Solução de Controvérsias - CASC</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-02-07T16:56:41.402449" elapsed="0.029294"/>
+</kw>
+<status status="PASS" start="2025-02-07T16:56:41.401447" elapsed="0.031295"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:41.752527" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-47.png"&gt;&lt;img src="selenium-screenshot-47.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-07T16:56:41.433741" elapsed="0.318786"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-07T16:56:41.752527" elapsed="2.250132"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-02-07T16:56:41.433741" elapsed="2.568918"/>
+</kw>
+<status status="PASS" start="2025-02-07T16:56:37.756698" elapsed="6.256776"/>
+</test>
+<test id="s1-s1-t2" name="Caso de teste 02 - Buscar por número do protocolo" line="16">
+<kw name="Abrir o navegador" owner="listar_acordos_page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:44.028519" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-02-07T16:56:44.027519" elapsed="1.822367"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-02-07T16:56:45.849886" elapsed="0.048545"/>
+</kw>
+<status status="PASS" start="2025-02-07T16:56:44.026487" elapsed="1.871944"/>
+</kw>
+<kw name="DADO que o usuário está logado no sistema de acordos" owner="listar_acordos_page">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:45.901746" level="INFO">Opening url 'http://autocomposicao-frontend-dev.apps.ocppge.in.pge.rj.gov.br/acordos'</msg>
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-02-07T16:56:45.900963" elapsed="0.992468"/>
+</kw>
+<status status="PASS" start="2025-02-07T16:56:45.900963" elapsed="0.992468"/>
+</kw>
+<kw name="E preenche o campo &quot;Buscar por&quot; com um número de protocolo" owner="listar_acordos_page">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:46.896726" level="INFO">Clicking element '//input[contains(@class,'form-control')]'.</msg>
+<msg time="2025-02-07T16:56:47.070152" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-02-07T16:56:47.070728" level="FAIL">Element with locator '//input[contains(@class,'form-control')]' not found.</msg>
+<arg>${INPUT_BUSCA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-02-07T16:56:46.895713" elapsed="0.177280">Element with locator '//input[contains(@class,'form-control')]' not found.</status>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${INPUT_BUSCA}</arg>
+<arg>0001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-02-07T16:56:47.072993" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-07T16:56:46.894611" elapsed="0.178382">Element with locator '//input[contains(@class,'form-control')]' not found.</status>
+</kw>
+<kw name="E clica no botão Buscar" owner="listar_acordos_page">
+<status status="NOT RUN" start="2025-02-07T16:56:47.074129" elapsed="0.000000"/>
+</kw>
+<kw name="Então o sistema filtra os resultados pelo número informado" owner="listar_acordos_page">
+<status status="NOT RUN" start="2025-02-07T16:56:47.075265" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:47.210332" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-49.png"&gt;&lt;img src="selenium-screenshot-49.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-07T16:56:47.076407" elapsed="0.133925"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-07T16:56:47.211334" elapsed="2.200429"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-02-07T16:56:47.076407" elapsed="2.335356"/>
+</kw>
+<status status="FAIL" start="2025-02-07T16:56:44.024430" elapsed="5.388353">Element with locator '//input[contains(@class,'form-control')]' not found.</status>
+</test>
+<test id="s1-s1-t3" name="Caso de teste 03 - Buscar por status &quot;Pedido recebido pela CASC&quot;" line="22">
+<kw name="Abrir o navegador" owner="listar_acordos_page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:49.419328" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg time="2025-02-07T16:56:50.088257" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-02-07T16:56:50.088257" level="FAIL">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</msg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-02-07T16:56:49.418324" elapsed="1.229107">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-02-07T16:56:50.648406" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-07T16:56:49.418324" elapsed="1.230082">NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:50.652908" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-07T16:56:50.651966" elapsed="0.000942"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-07T16:56:50.652908" elapsed="0.000000"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-02-07T16:56:50.650916" elapsed="0.001992"/>
+</kw>
+<status status="FAIL" start="2025-02-07T16:56:49.417329" elapsed="1.237098">Setup failed:
+NoSuchDriverException: Message: Unable to obtain driver for chrome; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors/driver_location
+</status>
+</test>
+<test id="s1-s1-t4" name="Caso de teste 04 - Buscar por status &quot;Em análise de admissibilidade&quot;" line="28">
+<kw name="Abrir o navegador" owner="listar_acordos_page" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="FAIL" start="2025-02-07T16:56:50.659502" elapsed="0.001495">Execution terminated by signal</status>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" start="2025-02-07T16:56:50.661306" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-02-07T16:56:50.659502" elapsed="0.002501">Execution terminated by signal</status>
+</kw>
+<kw name="Run Keywords" owner="BuiltIn" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-02-07T16:56:50.666341" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-02-07T16:56:50.664810" elapsed="0.001531"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-07T16:56:50.666341" elapsed="0.000000"/>
+</kw>
+<arg>Capture Page Screenshot</arg>
+<arg>Close Browser</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-02-07T16:56:50.664810" elapsed="0.001531"/>
+</kw>
+<status status="FAIL" start="2025-02-07T16:56:50.657450" elapsed="0.011921">Setup failed:
+Execution terminated by signal</status>
+</test>
+<test id="s1-s1-t5" name="Caso de teste 05 - Buscar por status &quot;Pedido inadmitido na CASC&quot;" line="34">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.680377" elapsed="0.001387">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t6" name="Caso de teste 06 - Buscar por status &quot;Pedido admitido preliminarmente na CASC&quot;" line="40">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.686416" elapsed="0.001978">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t7" name="Caso de teste 07 - Buscar por status &quot;Inadmitido por falta de interesse&quot;" line="46">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.694216" elapsed="0.001028">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t8" name="Caso de teste 08 - Buscar por status &quot;Pedido admitido na CASC&quot;" line="52">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.701399" elapsed="0.001004">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t9" name="Caso de teste 09 - Buscar por status &quot;Em fase de sessões de mediação&quot;" line="58">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.706496" elapsed="0.001075">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t10" name="Caso de teste 10 - Buscar por status &quot;Acordo concluído por ausência de acordo&quot;" line="64">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.712663" elapsed="0.001519">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t11" name="Caso de teste 11 - Buscar por status &quot;Etapa de assinatura e homologação&quot;" line="70">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.718257" elapsed="0.001088">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t12" name="Caso de teste 12 - Buscar por status &quot;Acordo concluído com êxito&quot;" line="76">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.723935" elapsed="0.000996">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t13" name="Caso de teste 13 - Buscar por parte" line="82">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.731596" elapsed="0.001982">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s1-t14" name="Caso de teste 14 - Buscar por registro inexistente" line="88">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.738119" elapsed="0.001615">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>Essa suite testa a funcionalidade Listar acordos</doc>
+<status status="FAIL" start="2025-02-07T16:56:37.527626" elapsed="13.217534"/>
+</suite>
+<suite id="s1-s2" name="Propor Novo Acordo Testes" source="C:\Robot\web\test\propor_novo_acordo_testes.robot">
+<test id="s1-s2-t1" name="Caso de teste 01 - Acessar a tela &quot;Proposta de Novo Acordo&quot;" line="11">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.753303" elapsed="0.000993">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-s2-t2" name="Caso de teste 02 - Criar novo acordo" line="17">
+<tag>robot:exit</tag>
+<status status="FAIL" start="2025-02-07T16:56:50.754834" elapsed="0.000000">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>Essa suite testa a funcionalidade Propor Novo Acordo</doc>
+<status status="FAIL" start="2025-02-07T16:56:50.751304" elapsed="0.006056"/>
+</suite>
+<status status="FAIL" start="2025-02-07T16:56:37.491230" elapsed="13.269682"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="15" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="3" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="1" fail="15" skip="0" id="s1" name="Test">Test</stat>
+<stat pass="1" fail="13" skip="0" id="s1-s1" name="Listar Acordos Testes">Test.Listar Acordos Testes</stat>
+<stat pass="0" fail="2" skip="0" id="s1-s2" name="Propor Novo Acordo Testes">Test.Propor Novo Acordo Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
